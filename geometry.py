@@ -1,5 +1,5 @@
-#import libs
-#Оставь надежду, всяк сюда входящий. Я не знаю как в этом работать
+#
+#Оставь надежду, всяк сюда входящий. Я сам не знаю как в этом работать
 
 class point:
 
@@ -8,21 +8,37 @@ class point:
 		self.y = y
 		self.z = z
 	
-	def sum_point_to_point(self, x1, y1, z1):
-		sx = self.x+x1
-		sy = self.y+y1
-		sz = self.z+z1
+	def sum_point_to_point(self, p):
+		sx = self.x+p.x
+		sy = self.y+p.y
+		sz = self.z+p.z
 		nvector = vector(sx, sy, sz)
 
 		return(nvector)
 
-	def dev_point_to_point(self, x1, y1, z1):
-		sx = self.x-x1
-		sy = self.y-y1
-		sz = self.z-z1
+	def dev_point_from_point(self, p):
+		sx = self.x-p.x
+		sy = self.y-p.y
+		sz = self.z-p.z
 		nvector = vector(sx, sy, sz)
 
 		return(nvector)
+	
+	def sum_vector_to_point(self, v):
+		sx = self.x+v.xf
+		sy = self.y+v.yf
+		sz = self.z+v.zf
+		npoint = point(sx, sy, sz)
+		
+		return(npoint)
+	
+	def dev_vector_from_point(self, v):
+		sx = self.x-v.xf
+		sy = self.y-v.yf
+		sz = self.z-v.zf
+		npoint = point(sx, sy, sz)
+	
+		return(npoint)
 
 	def draw(self):
 		return(self.x, self.y, self.z)
@@ -33,20 +49,20 @@ class vector:
 		self.xf = xf
 		self.yf = yf
 		self.zf = zf
-
-	def sum_vector_to_point(self, x1f, y1f, z1f):
-		sxf = self.xf+x1f
-		syf = self.yf+y1f
-		szf = self.zf+z1f
-		npoint = point(sxf, syf, szf)
-		
-		return(npoint)
 	
-	def dev_vector_to_vector(self, x1f, y1f, z1f):
-		sxf = self.xf-x1f
-		syf = self.yf-y1f
-		szf = self.zf-z1f
+	def sum_vector_to_vector(self, v):
+		sxf = self.xf+v.xf
+		syf = self.yf+v.yf
+		szf = self.zf+v.zf
 		svector = vector(sxf, syf, szf)
+		return(svector)
+	
+	def dev_vector_from_vector(self, v):
+		sxf = self.xf-v.xf
+		syf = self.yf-v.yf
+		szf = self.zf-v.zf
+		svector = vector(sxf, syf, szf)
+		return(svector)
 
 	def draw(self):
 		return(self.xf, self.yf, self.zf)
