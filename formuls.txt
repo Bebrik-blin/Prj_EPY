@@ -1,0 +1,13 @@
+formuls: 
+			 1)x = (x; 0; 0)
+			   y = (0; y; 0)
+			   z = (0; 0; z)
+
+			 2)(ax; ay; az) * (bx; by; bz) = ((ay*bz - az*by); (az*bx - ax*bz); (ax*by- ay*bx))
+
+			 3)xp = y * z = (0; y; 0) * (0; 0; z) = (y*z; 0; 0)
+			   yp = x * z = (x; 0; 0) * (0; 0; z) = (0; -(x*z); 0)
+
+			 	|xp1; yp1|
+		    verticesp = |xp2; yp2|
+				|xp3; yp3|
