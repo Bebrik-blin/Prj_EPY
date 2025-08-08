@@ -22,22 +22,34 @@ class render:
 
 				else:
 					rewfigurs.append(line)
+		
+		finv = []
+		for i in rewfigurs:
+			mv = []
+			s = i[1, ]
+			mv = s.split(";")
+			finv.append(mv)
+		
+		return(finv)
 
-		return(rewfigurs)
-
-	def redraw(self):
+	def redraw(self, renf):
 		self.screen.fill(s.BLACK)
+		for i in renf:
+			s.pygame.draw.line(self.screen, s.WHITE, [0, 0, 0], s.geometry.math.vector_to_plain(s.geometry.vector(i)))
 			
 
 
 	def start(self):
-		screen = pygame.display.set_mode(self.width)
+		screen = s.pygame.display.set_mode(self.width)
 		self.screen = screen
-		self.
+		renf = render.reader(self)
 
 		while self.running:
-			for e in pygame.event.get():
-				if event.type == pygame.QUIT:
+			for e in s.pygame.event.get():
+				if s.pygame.event.type == s.pygame.QUIT:
 					self.running = False
+				
+				else:
+					render.redraw(renf)
 
-		pygame.quit()
+		s.pygame.quit()
